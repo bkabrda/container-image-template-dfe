@@ -1,0 +1,55 @@
+version: '1'
+
+defaults:
+  files:
+    # we render this file, but we don't actually put it into image;
+    #   a manpage is first generated from it and that is copied
+    #   inside the image by Makefile
+    helpmd:
+      path: help/help.md
+  vars:
+    software_version: 2.4
+    authoritative_source_url: "some.url.org"
+    description: "This is a simple container that just tells you how awesome it is. That's it."
+
+configurations:
+  - name: fedora-26-version-2.4
+    tag: "fedora/awesome:2.4"
+    vars:
+      base_img_reg: registry.fedoraproject.org
+      base_img_name: fedora
+      base_img_tag: 26
+      distro_specific_help: |
+        These are Fedora-specific instructions
+      vendor: Fedora Project
+
+  - name: fedora-26-version-2.2
+    tag: "fedora/awesome:2.2"
+    vars:
+      base_img_reg: registry.fedoraproject.org
+      base_img_name: fedora
+      base_img_tag: 26
+      distro_specific_help: |
+        These are Fedora-specific instructions
+      software_version: 2.2  # override default software version
+      vendor: Fedora Project
+
+  - name: centos-7-version-2.4
+    tag: "centos/awesome:2.4"
+    vars:
+      base_img_reg: docker.io
+      base_img_name: centos
+      base_img_tag: 7
+      distro_specific_help: |
+        These are CentOS-specific instructions
+      vendor: CentOS Project
+
+  - name: rhel-7-version-2.4
+    tag: "rhel/awesome:2.4"
+    vars:
+      base_img_reg: registry.access.redhat.com
+      base_img_name: rhel7
+      base_img_tag: ""
+      distro_specific_help: |
+        These are RHEL-specific instructions
+      vendor: Red Hat
