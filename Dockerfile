@@ -1,4 +1,4 @@
-FROM {{ base_img_reg }}/{{ base_img_name }}:{{ base_img_tag }}
+FROM {{ base_img_reg }}{{ base_img_name }}:{{ base_img_tag }}
 
 LABEL MAINTAINER ...
 

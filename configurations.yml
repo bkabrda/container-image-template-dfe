@@ -37,7 +37,6 @@ configurations:
   - name: centos-7-version-2.4
     tag: "centos/awesome:2.4"
     vars:
-      base_img_reg: docker.io
       base_img_name: centos
       base_img_tag: 7
       distro_specific_help: |
