@@ -1,9 +1,9 @@
-% IMAGE_NAME (1) Container Image Pages
+% {{ name }} (1) Container Image Pages
 % MAINTAINER
 % DATE
 
 # NAME
-Image_name - short description
+{{ name }} - {{ description }}
 
 # DESCRIPTION
 Describe how image is used (user app, service, base image, builder image, etc.), the services or features it provides, and environment it is intended to run in (stand-alone docker, atomic super-privileged, oc multi-container app, etc.).
@@ -25,15 +25,13 @@ To remove the XYZ container (not the image) from your system, run:
 
 Also, describe default configuration options (when defined): hostname, domainname, user ID run as, exposed ports, volumes, working directory, command run by default, etc.
 
-${OS_SPECIFIC_INFO}
+{{ distro_specific_help }}
 
 # ENVIRONMENT VARIABLES
 Explain all environment variables available to run the image in different ways without the need of rebuilding the image. Change variables on the docker command line with -e option. For example:
 
 MYSQL_PASSWORD=mypass
                 The password set for the current MySQL user.
-
-${VERSION_SPECIFIC_INFO}
 
 # LABELS
 Describe LABEL settings (from the Dockerfile that created the image) that contains pertinent information.
@@ -47,8 +45,8 @@ If you expose ports or run with privileges, note those and provide an explanatio
 -d
     Runs continuously as a daemon process in the background
 
--p 3306:3306
-    Opens  container  port  3306  and  maps it to the same port on the Host.
+-p 9000:9000
+    Opens  container  port  9000  and  maps it to the same port on the Host.
 
 
 # HISTORY
