@@ -11,6 +11,7 @@ defaults:
     software_version: 2.4
     authoritative_source_url: "some.url.org"
     description: "This is a simple container that just tells you how awesome it is. That's it."
+    installer: yum
 
 configurations:
   - name: fedora-26-version-2.4
@@ -22,6 +23,7 @@ configurations:
       distro_specific_help: |
         These are Fedora-specific instructions
       vendor: Fedora Project
+      installer: dnf
 
   - name: fedora-26-version-2.2
     tag: "fedora/awesome:2.2"
@@ -33,6 +35,7 @@ configurations:
         These are Fedora-specific instructions
       software_version: 2.2  # override default software version
       vendor: Fedora Project
+      installer: dnf
 
   - name: centos-7-version-2.4
     tag: "centos/awesome:2.4"
