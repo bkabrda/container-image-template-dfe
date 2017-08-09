@@ -14,3 +14,8 @@ build: doc dfe
 
 run: build
 	docker run -p 9000:9000 -d `dfe -v ${CONFIGURATION} "tag"`
+
+clean:
+	rm -f Dockerfile.*
+	rm -f help/help.md.*
+	rm -rf root
