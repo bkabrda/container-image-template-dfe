@@ -1,8 +1,8 @@
 .PHONY: dfe doc build run test
 
 CONFIGURATION = fedora-26-version-2.4
-TAG = $(shell dfe expanded-value ${CONFIGURATION} "tag")
-VERSION = $(shell dfe expanded-value ${CONFIGURATION} "vars.software_version")
+TAG = $(shell dfe config-value ${CONFIGURATION} "tag")
+VERSION = $(shell dfe config-value ${CONFIGURATION} "vars.software_version")
 
 dfe:
 	dfe render ${CONFIGURATION}
