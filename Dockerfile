@@ -28,7 +28,8 @@ RUN {{ installer }} install -y nmap-ncat && \
     {{ installer }} clean all
 
 # add help file
-COPY root /
+#  NOTE: this file is rendered from help.md, it's not actually templated (help.md is)
+COPY root/help.1.{{ name }} /help.1
 COPY script.sh /usr/bin/
 
 CMD ["/usr/bin/script.sh"]

@@ -9,7 +9,7 @@ dfe:
 
 doc: dfe
 	mkdir -p ./root/
-	go-md2man -in=help/help.md.${CONFIGURATION} -out=./root/help.1
+	go-md2man -in=help/help.md.${CONFIGURATION} -out=./root/help.1.${CONFIGURATION}
 
 build: doc dfe
 	docker build --tag=${TAG} -f Dockerfile.${CONFIGURATION} .
