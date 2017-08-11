@@ -1,6 +1,7 @@
 document: modularity-testing
 version: 1
 name: myawesomecontainer
+# TODO: remove this when https://github.com/fedora-modularity/meta-test-family/issues/47 is fixed
 modulemd-url: https://src.fedoraproject.org/modules/memcached/raw/master/f/memcached.yaml
 service:
   port: 9000
