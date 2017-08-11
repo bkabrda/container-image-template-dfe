@@ -1,4 +1,4 @@
-# container-image-template
+# Container Image Template
 
 This is a template of a git repository which is a source for building container images.
 
@@ -22,3 +22,5 @@ It uses [dfe](https://github.com/bkabrda/dfe) to render the `Dockerfile` templat
 * `make [CONFIGURATION=<name>] build` - build image with a certain configuration listed in `configurations.yml`
 * `make [CONFIGURATION=<name>] run` - build and run container with a certain configuration listed in `configurations.yml`
 * `make [CONFIGURATION=<name>] test` - build and test a container with certain configuration listed in `configurations.yml`
+
+Note: default configuration is `fedora-26-version-2.4`. You can list all configurations by runnig `dfe list-configs`.
