@@ -17,13 +17,13 @@ class SanityCheck1(module_framework.AvocadoTest):
 
     def test1(self):
         self.start()
-        r = urllib2.urlopen('http://localhost:9000')
+        r = urllib2.urlopen('http://localhost:{p}'.format(p=self.getConfig()['service']['port']))
         html = r.read()
-        self.assertEqual(html, 'I am awesome')
+        self.assertEqual(html, 'I am awesome\n')
 
     def testVersionSpecific(self):
         version = os.environ.get('VERSION')
-        if version == 'x.y':
+        if version == '2.2':
             pass  # some version-specific test goes here
 
 if __name__ == '__main__':
